@@ -41,9 +41,14 @@ public class PersonaService {
 	public Persona createPersona(CreatePersonaRequest createPersonaRequest) {
 		Persona persona = new Persona(createPersonaRequest);
 		Empresa empresa = new Empresa();
-		empresa.setNombre(createPersonaRequest.getEmpresa());
-		empresa.setDireccion(createPersonaRequest.getDireccionEmpresa());
-		empresa = empresaRepo.save(empresa);
+		boolean existe = empresaRepo.getByName(createPersonaRequest.getEmpresa())!= null;
+		if(!existe) {	
+			empresa.setNombre(createPersonaRequest.getEmpresa());
+			empresa.setDireccion(createPersonaRequest.getDireccionEmpresa());
+			empresa = empresaRepo.save(empresa);
+		}else {
+			empresa = empresaRepo.getByName(createPersonaRequest.getEmpresa());
+		}
 		persona.setEmpresa(empresa);
 		persona = personaRepo.save(persona);
 		return persona;

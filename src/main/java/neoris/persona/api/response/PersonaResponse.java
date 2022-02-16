@@ -17,6 +17,8 @@ public class PersonaResponse {
 	private String direccion;
 	private String fullName;
 	private String saludo;
+	private String empresa;
+	private String direccionE;
 	
 	public PersonaResponse(Persona persona) {
 		this.id = persona.getId();
@@ -25,6 +27,8 @@ public class PersonaResponse {
 		this.edad = persona.getEdad();
 		this.direccion = persona.getDireccion();
 		this.fullName = persona.getNombre() +  " " + persona.getApellido(); 
+		this.empresa = persona.getEmpresa().getNombre();
+		this.direccionE = persona.getEmpresa().getDireccion();
 		this.saludo = persona.getSaludo();
 	}
 }
