@@ -1,0 +1,133 @@
+{
+	"info": {
+		"_postman_id": "40298089-5e54-4c51-8a80-cf6efb37f3b0",
+		"name": "Persona",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ErrorNombreExistente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"Mario\",\r\n    \"apellido\" : \"Martinez\",\r\n    \"edad\" : \"24\",\r\n    \"direccion\" : \"Escobedo\",\r\n    \"empresa\": \"Megacabl\",\r\n    \"direccionEmpresa\" :\"Guadalupe\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/persona/createPersona",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"persona",
+						"createPersona"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreatePersona",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"Rodrigo\",\r\n    \"apellido\" : \"Martinez\",\r\n    \"edad\" : \"24\",\r\n    \"direccion\" : \"Escobedo\",\r\n    \"empresa\": \"Dell\",\r\n    \"direccionEmpresa\" :\"Guadalupe\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/persona/createPersona",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"persona",
+						"createPersona"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "VerPersonas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/persona/getAllPersonas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"persona",
+						"getAllPersonas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ErrorNoExistePersona",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/persona/getByName/Wendy",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"persona",
+						"getByName",
+						"Wendy"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ErrorListaVacia",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/persona/getAllPersonas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"persona",
+						"getAllPersonas"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
